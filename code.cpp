@@ -3,6 +3,7 @@
 #include <ctime>
 #include <iomanip>
 
+using namespace std;
 
 void showBalance(double balance, char currency);
 double deposit();
@@ -13,25 +14,24 @@ int main() {
 	
 	double balance = 0;
 	int choice = 0;
-	char currency = '!';
 
 
 	do {
-		std::cout << "********************" << std::endl;
-		std::cout << "*Enter your choice!*" << std::endl;
-		std::cout << "********************" << std::endl;
+		cout << "********************" << endl;
+		cout << "*Enter your choice!*" << endl;
+	 cout << "********************" << endl;
 
-		std::cout << "" << std::endl; // Breaks up the choises from Enter Your Choice box.
+		cout << "" << endl; // Breaks up the choises from Enter Your Choice box.
 
-		std::cout << "1. Show Balance" << std::endl;
-		std::cout << "2. Deposit Money" << std::endl;
-		std::cout << "3. Withdraw Money" << std::endl;
-		std::cout << "4. Exit" << std::endl;
+		cout << "1. Show Balance" << endl;
+		cout << "2. Deposit Money" << endl;
+		cout << "3. Withdraw Money" << endl;
+		cout << "4. Exit" << endl;
 
 		//Inputs
-		std::cin >> choice;
+		cin >> choice;
 
-		std::cin.clear();
+		cin.clear();
 		fflush(stdin);
 
 		switch (choice) {
@@ -53,7 +53,7 @@ int main() {
 }
 
 void showBalance(double balance, char currency) {
-	std::cout << "Your Balance is: " << ::currency << std::setprecision(2) << std::fixed << balance << std::endl;
+	cout << "Your Balance is: " << ::currency << setprecision(2) << fixed << balance << endl;
 }
 
 double deposit() {
@@ -61,15 +61,15 @@ double deposit() {
 
 	double amount = 0;
 
-	std::cout << "Enter amount to be deposited: " << std::endl;
+	cout << "Enter amount to be deposited: " << endl;
 
-	std::cin >> amount;
+	cin >> amount;
 
 	if (amount > 0) {
 		return amount;
 	}
 	else {
-		std::cout << "That's not a valid amount" << std::endl;
+		cout << "That's not a valid amount" << endl;
 	}
 
 
@@ -80,16 +80,16 @@ double withdraw(double balance, char currency) {
 	
 	double amount = 0;
 	
-	std::cout << "Enter amount to be withdrawn from your account: " << std::endl;
-	std::cin >> amount;
+	cout << "Enter amount to be withdrawn from your account: " << endl;
+	cin >> amount;
 	
 
 	if (amount > balance) {
-		std::cout << "Insufficient Funds!" << std::endl;
+		cout << "Insufficient Funds!" << endl;
 		return 0;
 	}
 	else if (amount < 0) {
-		std::cout << "That's not a valid amount" << std::endl;
+		cout << "That's not a valid amount" << endl;
 		return 0;
 	}
 	else {
